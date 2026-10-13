@@ -39,6 +39,7 @@ See `docs/THREAT_MODEL.md` for detail.
 | --- | --- | --- |
 | Web UI token in query string | Convenient for local demos; treat as secret | 2027-04-01 |
 | REA is a large dependency | Pinned; used only for optional JS analysis e2e | 2027-04-01 |
+| `braces@3.0.3` GHSA-vfj7-8cjw-p6xm (high) | Transitive via `typescript-eslint` → `micromatch`; no fixed release `>3.0.3` on npm as of 2026-10-13. Dev-only path (lint). Ignored in `bun audit` until upstream ships a patch. | 2027-01-13 |
 
 ## If you find an issue
 
