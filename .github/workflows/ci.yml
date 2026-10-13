@@ -50,7 +50,8 @@ jobs:
         run: ./gitleaks git --redact --exit-code 1 --config .gitleaks.toml
 
       - name: Bun audit
-        run: bun audit
+        # Accepted risk: braces@3.0.3 via typescript-eslint (dev-only). See SECURITY.md expiry 2027-01-13.
+        run: bun audit --ignore=GHSA-vfj7-8cjw-p6xm
 
       - name: Skills layout
         run: bun test tests/skills
