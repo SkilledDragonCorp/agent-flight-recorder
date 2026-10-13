@@ -1,0 +1,58 @@
+agent_label: cursor
+web:
+  enabled: true
+  host: 127.0.0.1
+  port: 0
+policy:
+  version: 1
+  profile: default
+  default_decision: deny
+  side_effect_verbs:
+    - submit
+    - send
+    - post
+    - create_account
+    - delete
+    - transfer
+    - purchase
+    - publish
+  redact_patterns: []
+  rules:
+    - id: allow-notes-read
+      server: notes
+      tool: read_note
+      decision: allow
+    - id: approve-notes-write
+      server: notes
+      tool: write_note
+      decision: approve
+    - id: allow-web-local
+      server: web-actions
+      tool: "*"
+      when:
+        path: $.host
+        op: in
+        value: ["127.0.0.1", "localhost", "staging.skilleddragon.test"]
+      decision: allow
+    - id: deny-web-external
+      server: web-actions
+      tool: "*"
+      decision: deny
+    - id: allow-rea-js
+      server: rea
+      tool: analyze_javascript_application
+      decision: allow
+servers:
+  - name: notes
+    command: bun
+    args: ["run", "examples/servers/notes-server.ts"]
+    env:
+      NOTES_DB: .sdfr/notes.sqlite
+  - name: web-actions
+    command: bun
+    args: ["run", "examples/servers/web-actions-server.ts"]
+    env:
+      SANDBOX_INTERNET: http://127.0.0.1:8799
+  - name: rea
+    command: bun
+    args: ["run", "node_modules/rea-agents/scripts/rea.mjs", "mcp"]

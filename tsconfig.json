@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2024"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": ["bun", "node"],
+    "rootDir": ".",
+    "baseUrl": "."
+  },
+  "include": ["src/**/*", "examples/**/*", "tests/**/*"]
+}

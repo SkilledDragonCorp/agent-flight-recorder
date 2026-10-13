@@ -1,0 +1,6 @@
+{
+  "name": "sdfr-asar-fixture",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "Tiny Electron-like tree for REA analyze_javascript_application"
+}

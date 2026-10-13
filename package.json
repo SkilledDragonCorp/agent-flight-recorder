@@ -1,0 +1,58 @@
+{
+  "name": "@skilleddragon/agent-flight-recorder",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "MCP gateway with hash-chained ledger, YAML policy, emergency brake, and signed incident packets (sdfr)",
+  "license": "Apache-2.0",
+  "author": "SkilledDragon LLC",
+  "homepage": "https://github.com/SkilledDragonCorp/agent-flight-recorder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkilledDragonCorp/agent-flight-recorder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SkilledDragonCorp/agent-flight-recorder/issues"
+  },
+  "packageManager": "bun@1.4.2",
+  "engines": {
+    "node": ">=24",
+    "bun": ">=1.4.2"
+  },
+  "bin": {
+    "sdfr": "./dist/cli.js"
+  },
+  "scripts": {
+    "prepare": "lefthook install || true",
+    "build": "bun build ./src/cli.ts --outdir ./dist --target node --format esm && bun build ./src/web/ui/timeline.ts --outdir ./dist/web --target browser --format esm",
+    "dev": "bun run src/cli.ts",
+    "sdfr": "bun run src/cli.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check:skills": "bun test tests/skills",
+    "scenario": "bun run examples/scenario-false-report.ts",
+    "audit": "bun audit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "commander": "13.1.0",
+    "hono": "4.13.7",
+    "pino": "9.9.5",
+    "rea-agents": "6.4.0",
+    "yaml": "2.8.3",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.36.0",
+    "@types/bun": "1.2.22",
+    "@types/node": "24.5.2",
+    "eslint": "9.36.0",
+    "lefthook": "1.13.1",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.44.0"
+  }
+}

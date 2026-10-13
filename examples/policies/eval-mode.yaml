@@ -1,0 +1,18 @@
+version: 1
+profile: eval-mode
+default_decision: deny
+side_effect_verbs:
+  - submit
+  - send
+  - post
+  - create_account
+  - delete
+  - transfer
+  - purchase
+  - publish
+rules:
+  - id: allow-notes-read-only
+    server: notes
+    tool: read_note
+    decision: allow
+  # All network egress denied (no web-actions allows)

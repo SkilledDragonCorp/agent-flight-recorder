@@ -1,0 +1,58 @@
+# Secrets / env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+*service-account*.json
+credentials*.json
+.sdfr/keys/
+
+# Dependencies / caches
+node_modules/
+.bun/
+.bun-cache/
+
+# Build
+dist/
+build/
+out/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Rust
+target/
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs / coverage
+*.log
+logs/
+coverage/
+.nyc_output/
+lcov.info
+htmlcov/
+.coverage
+
+# Local flight-recorder state
+.sdfr/
+*.sqlite
+*.sqlite-journal
+*.db

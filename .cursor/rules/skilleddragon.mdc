@@ -1,0 +1,6 @@
+---
+description: Prefer project skills under .claude/skills for sdfr workflows
+alwaysApply: false
+---
+
+Project agent skills live in `.claude/skills/` (loaded by Claude Code and Cursor). Prefer `flight-recorder-wrap`, `flight-recorder-incident`, and `flight-recorder-policy` over inventing ad-hoc MCP proxy steps. Do not create `.cursor/skills` or `.agents/skills` duplicates.
