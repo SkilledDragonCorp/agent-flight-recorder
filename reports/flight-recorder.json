@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-10-13T23:50:10.991Z",
+  "lab": "agent-flight-recorder",
+  "keyless": true,
+  "ok": true,
+  "elapsed_ms": 122577,
+  "elapsed_s": 122.6,
+  "bun": {
+    "version": "1.4.2",
+    "pass": 50,
+    "fail": 0
+  },
+  "scenario": {
+    "ok": true,
+    "allowed": 7,
+    "approved": 2,
+    "denied": 3,
+    "blocked": 1,
+    "sandbox_received": 2,
+    "chain_ok": true,
+    "brake_ms": 10.54,
+    "elapsed_ms": 1339,
+    "error": null
+  },
+  "rea": {
+    "ok": true,
+    "exit_code": 0,
+    "package": "rea-agents@6.4.0",
+    "elapsed_ms": 53483
+  },
+  "steps": [
+    {
+      "id": "bun:test",
+      "command": "bun test",
+      "ok": true,
+      "exit_code": 0,
+      "elapsed_ms": 67751
+    },
+    {
+      "id": "scenario:false-report",
+      "command": "runScenario({ includeRea: false })",
+      "ok": true,
+      "exit_code": 0,
+      "elapsed_ms": 1339
+    },
+    {
+      "id": "e2e:rea",
+      "command": "bun test tests/e2e/rea-proxy.test.ts",
+      "ok": true,
+      "exit_code": 0,
+      "elapsed_ms": 53483
+    }
+  ],
+  "headline": {
+    "bun_pass": 50,
+    "bun_fail": 0,
+    "scenario": "7/2/3/1",
+    "rea_ok": true,
+    "brake_ms": 10.54
+  }
+}

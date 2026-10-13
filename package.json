@@ -34,6 +34,7 @@
     "format:check": "prettier --check .",
     "check:skills": "bun test tests/skills",
     "scenario": "bun run examples/scenario-false-report.ts",
+    "report": "bun run scripts/report.ts",
     "audit": "npm_config_registry=https://registry.npmjs.org bun audit --ignore=GHSA-vfj7-8cjw-p6xm"
   },
   "dependencies": {

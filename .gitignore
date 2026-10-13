@@ -56,3 +56,7 @@ htmlcov/
 *.sqlite
 *.sqlite-journal
 *.db
+
+# Local gitleaks binary downloads
+gitleaks
+gitleaks.tar.gz
